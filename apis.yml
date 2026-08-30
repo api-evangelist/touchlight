@@ -1,10 +1,20 @@
 aid: touchlight
 name: Touchlight
-description: 'Touchlight is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Touchlight is a UK-based cell-free DNA manufacturer, founded in 2007 and headquartered in
+  Hampton, London, that produces synthetic DNA enzymatically rather than by bacterial
+  fermentation. Its doggybone DNA (dbDNA) platform — along with mbDNA and z-dbDNA — is a
+  cell-free, plasmid-free DNA vector used as starting material for mRNA, viral vector (AAV,
+  lentivirus), non-viral gene therapy, gene editing and DNA vaccine programs, manufactured at
+  what the company describes as the first GMP-licensed facility for fully cell-free enzymatic
+  DNA. Touchlight sells physical DNA material — off-the-shelf catalogue constructs and custom
+  RUO-to-GMP manufacturing — and operates no developer program, public API, or machine-readable
+  API contract of any kind.
 url: https://raw.githubusercontent.com/api-evangelist/touchlight/refs/heads/main/apis.yml
+image: https://touchlight.com/wp-content/uploads/2025/07/website_meta-1.png
 x-type: company
 x-source: harvest:secondary-market
+x-harvest-source-url: https://www.hiive.com/securities/touchlight-stock
 x-tier: stub
 x-tier-reason: harvest
 specificationVersion: '0.20'
@@ -12,6 +22,13 @@ created: '2026-08-30'
 modified: '2026-08-30'
 tags:
 - Company
+- Biotechnology
+- Life Sciences
+- DNA Manufacturing
+- Synthetic Biology
+- Gene Therapy
+- Vaccines
+- Contract Manufacturing
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +36,49 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/touchlight-domain-security.yml
 - type: Website
-  url: https://www.hiive.com/securities/touchlight-stock
+  url: https://touchlight.com/
+- type: About
+  url: https://touchlight.com/about-us/
+- type: Blog
+  url: https://touchlight.com/news/
+- type: BlogRSS
+  url: https://touchlight.com/feed/
+- type: Contact
+  url: https://touchlight.com/contact/
+- type: TermsOfService
+  url: https://touchlight.com/terms/
+- type: PrivacyPolicy
+  url: https://touchlight.com/privacy-policy/
+- type: Careers
+  url: https://touchlight.com/about-us/careers/
+- type: LLMsTxt
+  url: llms/touchlight-llms.txt
+x-enrichment:
+  date: '2026-08-30'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    Touchlight sells physical genetic material — GMP-grade cell-free dbDNA constructs and
+    custom DNA manufacturing — so its only web surface is a WordPress marketing site: there is
+    no developer portal, no /developers, /api or docs host, and the site's own Yoast-generated
+    llms.txt indexes only marketing pages, news posts and an "Applications" post type with no
+    API named anywhere.
+  evidence:
+    - url: https://touchlight.com/llms.txt
+      status: 200
+    - url: https://touchlight.com/developers/
+      status: 404
+    - url: https://touchlight.com/api/
+      status: 404
+    - url: https://touchlight.com/openapi.json
+      status: 404
+    - url: https://touchlight.com/.well-known/api-catalog
+      status: 404
+  checked: '2026-08-30'
